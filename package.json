@@ -1,0 +1,70 @@
+{
+  "name": "is-global",
+  "version": "0.2.0",
+  "description": "Zero-dependency check for globally-installed Node.js modules",
+  "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      },
+      "require": {
+        "types": "./dist/index.d.cts",
+        "default": "./dist/index.cjs"
+      }
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "sideEffects": false,
+  "author": {
+    "name": "Gabriel Llamas",
+    "email": "gagle@outlook.com"
+  },
+  "keywords": [
+    "global",
+    "module",
+    "npm",
+    "yarn",
+    "pnpm",
+    "installed",
+    "globally",
+    "detect",
+    "check",
+    "cli"
+  ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gagle/node-is-global.git"
+  },
+  "homepage": "https://github.com/gagle/node-is-global#readme",
+  "bugs": {
+    "url": "https://github.com/gagle/node-is-global/issues"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "build": "tsdown",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:coverage": "vitest run --coverage",
+    "lint": "tsc --noEmit",
+    "prepublishOnly": "npm run lint && npm run build && npm test",
+    "release": "np"
+  },
+  "devDependencies": {
+    "@types/node": "^25.5.2",
+    "@vitest/coverage-v8": "^3.0.0",
+    "np": "^10.0.0",
+    "tsdown": "^0.12.0",
+    "typescript": "^5.7.0",
+    "vitest": "^3.0.0"
+  }
+}
